@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="incubatorBrooklynMaterialGui" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="incubatorBrooklynMaterialGui" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="incubatorBrooklynMaterialGui" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="incubatorBrooklynMaterialGui" class="no-js"> <!--<![endif]-->
+<head>
+    <title>Apache Brooklyn</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Apache Brooklyn is a library and control plane for deploying and managing
+     distributed applications. See brooklyn.incubator.apache.org for details and examples. Brooklyn's main emphasis
+     is managing live applications (e.g auto-scaling, exception handling, auto recovery from failure,
+     and working across multiple clouds). Brooklyn considers deployment part of management,
+     like the opening move in a game of chess. (Distributed-application-management-chess, no less).">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.min.css">
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Navbar -->
+<navbar></navbar>
+
+<!-- Content -->
+<div class="wrapper" ng-view ng-cloak></div>
+
+<!-- Base Scripts -->
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/Chart.js/Chart.js"></script>
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+
+<!-- AngularJS -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+<!-- Application Components -->
+<script src="app.js"></script>
+<script src="navbar/controller.js"></script>
+<script src="login/controller.js"></script>
+<script src="landing/controller.js"></script>
+<script src="home/controller.js"></script>
+
+</body>
+</html>

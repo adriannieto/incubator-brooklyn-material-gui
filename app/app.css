@@ -1,0 +1,66 @@
+.md-bolder{
+    font-weight: bolder;
+}
+
+.md-toolbar-image{
+    height: 50%;
+}
+
+.wrapper {
+    height: 90vh;
+}
+
+.md-fab-container {
+    position: fixed;
+    z-index: 10000;
+    bottom: 30px;
+    right: 50px;
+}
+
+.md-fab {
+    color: #f4f4f4;
+    fill: #f4f4f4;
+
+}
+
+.md-fab:hover.green-background, .md-fab.md-focused.light-blue-background {
+    background-color: #0460d7 !important;
+}
+
+.md-fab:hover.green-background, .md-fab.md-focused.purple-background {
+    background-color: #8a61e0 !important;
+}
+
+.gray-background {
+    background: #f5f5f5 !important;
+}
+
+.green-background {
+    background: #b9f6ca !important;
+}
+
+.yellow-background {
+    background: #ffff8d !important;
+}
+
+.blue-background {
+    background: #84ffff !important;
+}
+
+.purple-background {
+    background: #b388ff !important;
+}
+
+.red-background {
+    background: #ff8a80 !important;
+}
+
+.pink-background {
+    background: #E91E63 !important;
+}
+
+.light-blue-background {
+    background: #03A9F4 !important;
+}
+
+.angular-google-map-container { height: 350px; }

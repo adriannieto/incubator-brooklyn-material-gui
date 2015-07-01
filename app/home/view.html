@@ -1,0 +1,102 @@
+<md-content layout="row" layout-padding>
+    <div flex>
+        <h1 class="md-headline">Pending Challenges</h1>
+        <md-grid-list
+                md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                md-row-height-gt-md="3rem" md-row-height="5rem"
+                md-gutter="12px" md-gutter-gt-sm="6px">
+            <md-grid-tile class="pink-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+                <md-grid-tile-footer>
+                    <h3>#1</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="green-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+                <md-grid-tile-footer>
+                    <h3>#2</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="yellow-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+                <md-grid-tile-footer>
+                    <h3>#3</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+
+</md-content>
+
+
+<md-content layout="row" layout-sm="column" layout-padding>
+    <div flex class="md-shadow-bottom-z-1" layout-margin>
+        <h2 class="md-title">Locations</h2>
+        <ui-gmap-google-map layout-fill center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    </div>
+
+    <div flex class="md-shadow-bottom-z-1" layout-margin>
+        <h2 class="md-title">Server nodes</h2>
+
+        <md-data-table-container>
+            <table md-data-table md-row-select="selected">
+                <thead>
+                <tr>
+                    <th order-by="name">Type</th>
+                    <th order-by="name">SFAFSAF</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Sample data</td>
+                    <td>Blau</td>
+                </tr>
+                <tr>
+                    <td>Sample data</td>
+                    <td>asafasfsaf</td>
+                </tr>
+                <tr>
+                    <td>Sample data</td>
+                    <td>3333ffff</td>
+                </tr>
+                <tr>
+                    <td>Sample data</td>
+                    <td>kkkaskfaksf</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-data-table-container>
+
+        <md-data-table-toolbar layout-align="end">
+            <md-data-table-pagination md-limit="5" md-page="0" md-total="4"></md-data-table-pagination>
+        </md-data-table-toolbar>
+    </div>
+</md-content>
+
+<div class="md-fab-container">
+    <md-fab-speed-dial md-direction="up"
+                       ng-class="md-scale">
+        <md-fab-trigger>
+            <md-button aria-label="Menu" class="md-fab md-accent">
+                <md-icon class="md-light md-48"> menu</md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <md-button aria-label="Add new application" class="md-fab md-raised md-mini">
+                <md-icon class="md-light md-48">cloud_upload</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Add new application
+                </md-tooltip>
+            </md-button>
+            <md-button aria-label="Add new location" class="md-fab md-raised md-mini">
+                <md-icon class="md-light md-48">cloud_circle</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Add new location
+                </md-tooltip>
+            </md-button>
+            <md-button aria-label="Refresh properties" class="md-fab md-raised md-mini">
+                <md-icon class="md-light md-48">refresh</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Refresh properties
+                </md-tooltip>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
+</div>
