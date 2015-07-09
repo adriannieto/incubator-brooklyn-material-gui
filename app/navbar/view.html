@@ -4,12 +4,14 @@
             <md-icon aria-label="Menu" class="md-light md-48">menu</md-icon>
         </md-button>
         <img class="md-toolbar-image" src="brooklyn-logo.png">
-        <md-button hide-sm href="#/home" ng-click="false" ng-class="{'md-bolder': isViewActive('/home')}">Home</md-button>
+        <md-button hide-sm href="#/home" ng-click="false" ng-class="{'md-view-active': isViewActive('/home')}">Home</md-button>
+        <md-button hide-sm href="#/applications" ng-click="false" ng-class="{'md-view-active': isViewActive('/applications')}">Applications</md-button>
+        <md-button hide-sm href="#/server" ng-click="false" ng-class="{'md-view-active': isViewActive('/server')}">Server</md-button>
 
         <div flex></div>
-        <md-button  hide-sm href="#/landing" ng-click="false" aria-label="Logout">
-            Logout
-        </md-button>
+        <md-button hide-sm href="#/help" ng-click="false" ng-class="{'md-view-active': isViewActive('/help')}">Help</md-button>
+        <md-button hide-sm href="#/about" ng-click="false" ng-class="{'md-view-active': isViewActive('/about')}">About</md-button>
+        <md-button  hide-sm href="#/landing" ng-click="false" aria-label="Logout">Logout</md-button>
     </div>
 </md-toolbar>
 
@@ -19,6 +21,10 @@
     </md-toolbar>
     <md-content layout-padding  layout-align="center">
         <md-button href="#/home">Home</md-button>
+        <md-button href="#/applications">Applications</md-button>
+        <md-button href="#/server">Server</md-button>
+        <md-button href="#/help">Help</md-button>
+        <md-button href="#/about">About</md-button>
     </md-content>
     <br>
     <md-content>

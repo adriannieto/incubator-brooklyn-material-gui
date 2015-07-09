@@ -1,74 +1,53 @@
-<md-content layout="row" layout-padding>
-    <div flex>
-        <h1 class="md-headline">Pending Challenges</h1>
-        <md-grid-list
-                md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
-                md-row-height-gt-md="3rem" md-row-height="5rem"
-                md-gutter="12px" md-gutter-gt-sm="6px">
-            <md-grid-tile class="pink-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
-                <md-grid-tile-footer>
-                    <h3>#1</h3>
-                </md-grid-tile-footer>
-            </md-grid-tile>
-            <md-grid-tile class="green-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
-                <md-grid-tile-footer>
-                    <h3>#2</h3>
-                </md-grid-tile-footer>
-            </md-grid-tile>
-            <md-grid-tile class="yellow-background" md-rowspan="2" md-colspan="2" md-colspan-sm="1">
-                <md-grid-tile-footer>
-                    <h3>#3</h3>
-                </md-grid-tile-footer>
-            </md-grid-tile>
-        </md-grid-list>
-    </div>
-
-</md-content>
-
-
 <md-content layout="row" layout-sm="column" layout-padding>
     <div flex class="md-shadow-bottom-z-1" layout-margin>
         <h2 class="md-title">Locations</h2>
-        <ui-gmap-google-map layout-fill center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+        <ui-gmap-google-map layout-fill center='map.center' zoom='map.zoom'>
+            <ui-gmap-marker ng-repeat="application in dummyApplications track by $index"
+                            idKey='$index' coords='application.location'
+                            options="{animation:'DROP'}">
+            </ui-gmap-marker>
+
+
+        </ui-gmap-google-map>
     </div>
 
     <div flex class="md-shadow-bottom-z-1" layout-margin>
-        <h2 class="md-title">Server nodes</h2>
-
+        <h2 class="md-title">Deployed applications</h2>
+        <!-- https://github.com/daniel-nagy/md-data-table -->
         <md-data-table-container>
-            <table md-data-table md-row-select="selected">
-                <thead>
+            <table md-data-table md-progress="deferred">
+                <thead md-order="dataTableOptions.order">
                 <tr>
-                    <th order-by="name">Type</th>
-                    <th order-by="name">SFAFSAF</th>
+                    <th order-by="name">Application</th>
+                    <th order-by="status">Status</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Sample data</td>
-                    <td>Blau</td>
-                </tr>
-                <tr>
-                    <td>Sample data</td>
-                    <td>asafasfsaf</td>
-                </tr>
-                <tr>
-                    <td>Sample data</td>
-                    <td>3333ffff</td>
-                </tr>
-                <tr>
-                    <td>Sample data</td>
-                    <td>kkkaskfaksf</td>
+                <tr ng-repeat="application in dummyApplications | orderBy: dataTableOptions.order
+                    | filter: dataTableOptions.skip | limitTo: dataTableOptions.limit">
+                    <td>{{application.name}}</td>
+                    <td>{{application.status}}</td>
                 </tr>
                 </tbody>
             </table>
         </md-data-table-container>
 
         <md-data-table-toolbar layout-align="end">
-            <md-data-table-pagination md-limit="5" md-page="0" md-total="4"></md-data-table-pagination>
+            <md-data-table-pagination md-limit="dataTableOptions.limit" md-page="dataTableOptions.page"
+                                      md-total="{{dataTableOptions.length}}"
+                                      md-row-select="[5]"></md-data-table-pagination>
         </md-data-table-toolbar>
     </div>
 </md-content>
+
+<md-content layout="row" layout-padding>
+    <div flex class="md-shadow-bottom-z-1" layout-margin>
+        <h2 class="md-title">Server log</h2>
+        <ui-codemirror class="angular-ui-codemirror-container" ui-codemirror-opts="codeMirrorOptions"
+                       ng-model="serverLog"></ui-codemirror>
+    </div>
+</md-content>
+
 
 <div class="md-fab-container">
     <md-fab-speed-dial md-direction="up"

@@ -6,6 +6,16 @@
     height: 50%;
 }
 
+.md-toolbar-tools .md-button{
+    font-weight: 300;
+
+
+}
+
+.md-view-active {
+    font-weight: 500 !important;
+
+}
 .wrapper {
     height: 90vh;
 }
@@ -30,6 +40,14 @@
 .md-fab:hover.green-background, .md-fab.md-focused.purple-background {
     background-color: #8a61e0 !important;
 }
+
+
+.angular-google-map-container { height: 310px; }
+
+.angular-ui-codemirror-container .CodeMirror{ height: 220px; }
+
+
+/* Useful colors */
 
 .gray-background {
     background: #f5f5f5 !important;
@@ -63,4 +81,3 @@
     background: #03A9F4 !important;
 }
 
-.angular-google-map-container { height: 350px; }
