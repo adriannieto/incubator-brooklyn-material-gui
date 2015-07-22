@@ -1,0 +1,43 @@
+<md-dialog aria-label="Add new application dialog" flex="80">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Add new application</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-content layout="column" >
+            <md-tabs md-center-tabs="false">
+                <md-tab label="Select an application from Brookyn Catalog">
+                    <md-content class="md-padding">
+                        Catalog
+                    </md-content>
+                </md-tab>
+                <md-tab label="Generate a user defined application">
+                    <md-content class="md-padding">
+                            Drag and drop editor
+                    </md-content>
+                </md-tab>
+                <md-tab label="RAW YAML Input">
+                    <md-content class="md-padding">
+                        <ui-codemirror class="angular-ui-codemirror-container" ui-codemirror-opts="codeMirrorOptions"
+                                       ng-model="yamlInput"></ui-codemirror>
+                    </md-content>
+                </md-tab>
+
+            </md-tabs>
+        </md-content>
+
+        <md-content layout="row" layout-padding layout-align="end center">
+            <md-button ng-click="cancel()" class="md-primary md-warn">
+                Cancel
+            </md-button>
+            <md-button ng-click="success()" class="md-primary md-accent md-raised">
+                Deploy application
+            </md-button>
+        </md-content>
+    </md-dialog-content>
+</md-dialog>

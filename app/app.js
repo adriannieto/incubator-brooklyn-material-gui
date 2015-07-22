@@ -4,6 +4,7 @@ var incubatorBrooklynMaterialGui = angular.module('incubatorBrooklynMaterialGui'
     'ngRoute',
     'ngMaterial',
     'incubatorBrooklynMaterialGui.navbar',
+    'incubatorBrooklynMaterialGui.floatingActionButton',
     'incubatorBrooklynMaterialGui.login',
     'incubatorBrooklynMaterialGui.landing',
     'incubatorBrooklynMaterialGui.home',

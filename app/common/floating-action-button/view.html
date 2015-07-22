@@ -1,0 +1,31 @@
+<div class="md-fab-container">
+    <md-fab-speed-dial md-direction="up"
+                       ng-class="md-fling">
+        <md-fab-trigger>
+            <md-button aria-label="Menu" class="md-fab md-accent">
+                <md-icon>menu</md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <md-button aria-label="Add new application" class="md-fab md-raised md-mini" ng-click="showAddNewApplicationDialog($event)">
+                <md-icon>cloud_upload</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Add new application
+                </md-tooltip>
+            </md-button>
+            <md-button aria-label="Add new location" class="md-fab md-raised md-mini">
+                <md-icon>cloud_circle</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Add new location
+                </md-tooltip>
+            </md-button>
+            <md-button aria-label="Refresh properties" class="md-fab md-raised md-mini"
+                       ng-show="isViewActive('/home') || isViewActive('/server')">
+                <md-icon>refresh</md-icon>
+                <md-tooltip md-direction="left" md-delay="50" md-autohide>
+                    Refresh properties
+                </md-tooltip>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
+</div>
