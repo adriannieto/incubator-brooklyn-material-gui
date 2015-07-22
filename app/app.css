@@ -12,6 +12,10 @@
 
 }
 
+.md-sidenav-right{
+    background: #ECEFF1;
+}
+
 .md-view-active {
     font-weight: 500 !important;
 

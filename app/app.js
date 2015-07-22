@@ -6,7 +6,8 @@ var incubatorBrooklynMaterialGui = angular.module('incubatorBrooklynMaterialGui'
     'incubatorBrooklynMaterialGui.navbar',
     'incubatorBrooklynMaterialGui.login',
     'incubatorBrooklynMaterialGui.landing',
-    'incubatorBrooklynMaterialGui.home'
+    'incubatorBrooklynMaterialGui.home',
+    'incubatorBrooklynMaterialGui.applications'
 
 ]);
 

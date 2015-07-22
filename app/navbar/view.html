@@ -1,35 +1,44 @@
 <md-toolbar layout="row">
     <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-            <md-icon aria-label="Menu" class="md-light md-48">menu</md-icon>
-        </md-button>
+        <md-menu>
+            <md-button hide-gt-sm class="md-icon-button" aria-label="Menu" class="md-icon-button"
+                       ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin class="md-light md-48">menu</md-icon>
+            </md-button>
+            <md-menu-content>
+                <md-menu-item>
+                    <md-button href="#/home">Home</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button href="#/applications">Applications</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button href="#/server">Server</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button href="#/help">Help</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button href="#/about">About</md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
         <img class="md-toolbar-image" src="brooklyn-logo.png">
-        <md-button hide-sm href="#/home" ng-click="false" ng-class="{'md-view-active': isViewActive('/home')}">Home</md-button>
-        <md-button hide-sm href="#/applications" ng-click="false" ng-class="{'md-view-active': isViewActive('/applications')}">Applications</md-button>
-        <md-button hide-sm href="#/server" ng-click="false" ng-class="{'md-view-active': isViewActive('/server')}">Server</md-button>
+        <md-button hide-sm href="#/home" ng-click="false" ng-class="{'md-view-active': isViewActive('/home')}">Home
+        </md-button>
+        <md-button hide-sm href="#/applications" ng-click="false"
+                   ng-class="{'md-view-active': isViewActive('/applications')}">Applications
+        </md-button>
+        <md-button hide-sm href="#/server" ng-click="false" ng-class="{'md-view-active': isViewActive('/server')}">
+            Server
+        </md-button>
 
         <div flex></div>
-        <md-button hide-sm href="#/help" ng-click="false" ng-class="{'md-view-active': isViewActive('/help')}">Help</md-button>
-        <md-button hide-sm href="#/about" ng-click="false" ng-class="{'md-view-active': isViewActive('/about')}">About</md-button>
-        <md-button  hide-sm href="#/landing" ng-click="false" aria-label="Logout">Logout</md-button>
+        <md-button hide-sm href="#/help" ng-click="false" ng-class="{'md-view-active': isViewActive('/help')}">Help
+        </md-button>
+        <md-button hide-sm href="#/about" ng-click="false" ng-class="{'md-view-active': isViewActive('/about')}">About
+        </md-button>
+        <md-button hide-sm href="#/landing" ng-click="false" aria-label="Logout">Logout</md-button>
     </div>
 </md-toolbar>
-
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-    <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools">Apache Brooklyn</h1>
-    </md-toolbar>
-    <md-content layout-padding  layout-align="center">
-        <md-button href="#/home">Home</md-button>
-        <md-button href="#/applications">Applications</md-button>
-        <md-button href="#/server">Server</md-button>
-        <md-button href="#/help">Help</md-button>
-        <md-button href="#/about">About</md-button>
-    </md-content>
-    <br>
-    <md-content>
-            <md-button ng-click="toggleSidenav('left')" class="md-primary">
-                Close
-            </md-button>
-    </md-content>
-</md-sidenav>
