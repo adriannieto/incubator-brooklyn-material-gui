@@ -9,35 +9,85 @@
         </div>
     </md-toolbar>
     <md-dialog-content>
-        <md-content layout="column" >
-            <md-tabs md-center-tabs="false">
+        <div layout="column" layout-fill>
+            <md-tabs md-center-tabs="false" md-dynamic-height>
                 <md-tab label="Select an application from Brookyn Catalog">
-                    <md-content class="md-padding">
-                        Catalog
-                    </md-content>
+                    Catalog
                 </md-tab>
                 <md-tab label="Generate a user defined application">
-                    <md-content class="md-padding">
-                            Drag and drop editor
-                    </md-content>
+
+                    <div class="md-drop-zone-container" layout="row" layout-padding>
+                        <div flex="33" layout="column" layout-fill>
+                            Entities
+                            <md-input-container>
+                                <label>Search...</label>
+                                <input ng-model="entityCatalog.query">
+                            </md-input-container>
+
+                            <ul dnd-list>
+                                <li ng-repeat="entity in entityCatalog.items | filter: entityCatalog.query"
+                                    dnd-draggable="entity"
+                                    dnd-type="entity.type"
+                                    dnd-effect-allowed="copy">
+                                    {{entity.name}}
+                                </li>
+                            </ul>
+                            <ul dnd-list="[]">
+                                <li>Remove</li>
+                            </ul>
+                        </div>
+                        <div flex="66" layout="column" layout-fill class="md-drop-zone-border">
+                            <!-- Template for a container entity  -->
+                            <script type="text/ng-template" id="container.html">
+                                <div class="container-element">
+                                    <h3>{{entity.name}}</h3>
+                                    <ul dnd-list="entity.items">
+                                        <li ng-repeat="entity in entity.items"
+                                            dnd-draggable="entity"
+                                            dnd-type="entity.type"
+                                            dnd-effect-allowed="move"
+                                            dnd-moved="entity.items.splice($index, 1)"
+                                            ng-include="entity.type + '.html'">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </script>
+
+                            <!-- Template for a normal entity item -->
+                            <script type="text/ng-template" id="entity.html">
+                                <div class="item">{{entity.name}}</div>
+                            </script>
+
+                            <ul dnd-list="applicationSpec.items">
+                                <li ng-repeat="entity in applicationSpec.items"
+                                    dnd-draggable="entity"
+                                    dnd-type="entity.type"
+                                    dnd-effect-allowed="move"
+                                    dnd-moved="applicationSpec.items.splice($index, 1)"
+                                    ng-include="entity.type + '.html'">
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </md-tab>
                 <md-tab label="RAW YAML Input">
-                    <md-content class="md-padding">
-                        <ui-codemirror class="angular-ui-codemirror-container" ui-codemirror-opts="codeMirrorOptions"
-                                       ng-model="yamlInput"></ui-codemirror>
-                    </md-content>
+                    <ui-codemirror class="angular-ui-codemirror-container" ui-codemirror-opts="codeMirrorOptions"
+                                   ng-model="yamlInput"></ui-codemirror>
                 </md-tab>
-
             </md-tabs>
-        </md-content>
 
-        <md-content layout="row" layout-padding layout-align="end center">
-            <md-button ng-click="cancel()" class="md-primary md-warn">
-                Cancel
-            </md-button>
-            <md-button ng-click="success()" class="md-primary md-accent md-raised">
-                Deploy application
-            </md-button>
-        </md-content>
+            <div layout="row" layout-padding layout-align="end center">
+                <md-button ng-click="cancel()" class="md-primary md-warn">
+                    Cancel
+                </md-button>
+                <md-button ng-click="success()" class="md-primary md-accent md-raised">
+                    Deploy application
+                </md-button>
+            </div>
+        </div>
+
+
     </md-dialog-content>
 </md-dialog>
+

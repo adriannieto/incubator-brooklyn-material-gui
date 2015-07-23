@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('incubatorBrooklynMaterialGui.floatingActionButton', [])
+angular.module('incubatorBrooklynMaterialGui.floatingActionButton', ['dndLists'])
     .directive('floatingActionButton', function () {
         return {
             restrict: 'E',
@@ -22,6 +22,33 @@ angular.module('incubatorBrooklynMaterialGui.floatingActionButton', [])
             };
 
             $scope.yamlInput = " ";
+            $scope.entityCatalog = {
+                items: [
+                    {
+                        name: "Tomcat 8 Server",
+                        type: "entity"
+                    },
+                    {
+                        name: "PHP Server",
+                        type: "entity"
+                    },
+                    {
+                        name: "JBossCluster",
+                        type: "entity"
+                    },
+                    {
+                        name: "SameServerEntity",
+                        type: "container",
+                        items: []
+                    }
+                ],
+                query : ""
+            }
+
+            $scope.applicationSpec = {
+                items: []
+            };
+
 
             $scope.hide = function () {
                 $mdDialog.hide();

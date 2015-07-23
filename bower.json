@@ -14,6 +14,7 @@
     "angular-google-maps": "~2.1.5",
     "lodash": "~3.10.0",
     "angular-ui-codemirror": "~0.3.0",
-    "angular-material-data-table": "*"
+    "angular-material-data-table": "*",
+    "angular-drag-and-drop-lists": "~1.2.0"
   }
 }
